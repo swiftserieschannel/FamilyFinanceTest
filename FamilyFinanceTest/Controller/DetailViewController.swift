@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 class DetailViewController: UIViewController {
-
+    
     //MARK:- OUTLETS
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var foodName: UILabel!
@@ -49,7 +49,7 @@ extension DetailViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-        return "Ingredients"
+            return "Ingredients"
         }else{
             return "Steps"
         }
@@ -68,13 +68,16 @@ extension DetailViewController : UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell") as? IngredientsTableViewCell
         if indexPath.section == 0 {
-        cell?.ingredientsTextLabel.text = receipe?.ingredients[indexPath.row].name
-        cell?.ingredientsTypeLabel.text = receipe?.ingredients[indexPath.row].type
-        cell?.ingredientsQuantity.text = receipe?.ingredients[indexPath.row].quantity
+            cell?.ingredientsTypeLabel.isHidden = false
+            cell?.ingredientsQuantity.isHidden = false
+            cell?.ingredientsTextLabel.text = receipe?.ingredients[indexPath.row].name
+            cell?.ingredientsTypeLabel.text = receipe?.ingredients[indexPath.row].type
+            cell?.ingredientsQuantity.text = receipe?.ingredients[indexPath.row].quantity
         }else{
             cell?.ingredientsTextLabel.text = receipe?.steps[indexPath.row]
             cell?.ingredientsTypeLabel.isHidden = true
             cell?.ingredientsQuantity.isHidden = true
+            cell?.iconImageView.image = UIImage(named: "arrow")
         }
         return cell ?? UITableViewCell()
     }

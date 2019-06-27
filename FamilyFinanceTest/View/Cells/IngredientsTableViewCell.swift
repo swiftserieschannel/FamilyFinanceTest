@@ -18,6 +18,7 @@ class IngredientsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var ingredientsQuantity: UILabel!
     
+    @IBOutlet weak var iconImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

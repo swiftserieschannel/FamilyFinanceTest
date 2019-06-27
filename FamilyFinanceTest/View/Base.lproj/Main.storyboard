@@ -70,7 +70,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="cU9-Lt-aHy"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFE-5K-34k">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFE-5K-34k">
                                                     <rect key="frame" x="55" y="10" width="309" height="24.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -106,6 +106,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="iconImageView" destination="OfK-3b-MtM" id="JUY-Le-wby"/>
                                             <outlet property="ingredientsQuantity" destination="DtU-Lv-mzo" id="hBg-1Q-0Sn"/>
                                             <outlet property="ingredientsTextLabel" destination="XFE-5K-34k" id="B3a-Pp-wzc"/>
                                             <outlet property="ingredientsTypeLabel" destination="ac7-Lv-mEI" id="T5T-LS-Xwp"/>

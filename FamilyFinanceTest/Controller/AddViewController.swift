@@ -13,16 +13,20 @@ class AddViewController: UIViewController {
     //MARK: - OUTLETS
     
     @IBOutlet weak var addIngredientsTableView: UITableView!
-    
+    @IBOutlet weak var addStepsTableView: UITableView!
     //MARK:- STORED PROPERTIES
     var choosenImage:UIImage?
-    
+    var numberOfRowsForAddIngredients:Int = 1
+    var numberOfRowsForAddSteps:Int = 1
     //MARK: - LIFECYCLE CALLS
     override func viewDidLoad() {
         super.viewDidLoad()
         addIngredientsTableView.dataSource = self
         addIngredientsTableView.delegate = self
-        self.addIngredientsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
+        addStepsTableView.dataSource = self
+        addStepsTableView.delegate = self
+        //
+        //self.addIngredientsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
     //MARK: - INSTANCE METHODS
@@ -75,30 +79,30 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  1
+        return  numberOfRowsForAddIngredients
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 160
+        return 35
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsHeaderCell")! as! AddIngredientsHeaderCell
-//        header._lblGroupName.text = ""
-//        header._btnExpand.addTarget(self, action: "hideSection:", forControlEvents: .TouchUpInside)
-//
-//        header._lblTotalCount.text = ""
-        return header.contentView
+        header.delegate = self
+        return header
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Add Ingredients"
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell
         
         return cell ?? UITableViewCell();
+    }
+}
+
+extension AddViewController : AddIngredientsHeaderCellDelegate{
+    func addIngredientsBtnClicked() {
+        self.numberOfRowsForAddIngredients += 1
+        self.addIngredientsTableView.reloadData()
     }
     
     

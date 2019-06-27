@@ -173,8 +173,11 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-jk-mG7">
-                                                        <rect key="frame" x="20" y="272" width="374" height="624"/>
+                                                        <rect key="frame" x="20" y="272" width="374" height="324"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="324" id="6UQ-cJ-sdH"/>
+                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddIngredientsTableViewCell" rowHeight="60" id="1f9-cm-3tG" customClass="AddIngredientsTableViewCell" customModule="FamilyFinanceTest" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="374" height="60"/>
@@ -196,7 +199,7 @@
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfx-K6-NF1" customClass="MFTextField">
-                                                                            <rect key="frame" x="289" y="10" width="92.5" height="32.5"/>
+                                                                            <rect key="frame" x="289" y="10" width="92.5" height="30"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -222,22 +225,99 @@
                                                                     <outlet property="typeTF" destination="hBY-Jj-Qtg" id="Ufa-1k-EKc"/>
                                                                 </connections>
                                                             </tableViewCell>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddIngredientsHeaderCell" id="OMr-Kf-831" customClass="AddIngredientsHeaderCell" customModule="FamilyFinanceTest" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="88" width="374" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OMr-Kf-831" id="hHg-jY-XIU">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ6-3o-ams">
+                                                                            <rect key="frame" x="20" y="10" width="289" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addbtn" translatesAutoresizingMaskIntoConstraints="NO" id="BSS-W6-OST">
+                                                                            <rect key="frame" x="329" y="10" width="25" height="25"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="25" id="KTu-tU-tRM"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="P6r-tj-cPy"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOf-Eg-vd0">
+                                                                            <rect key="frame" x="329" y="10" width="25" height="25"/>
+                                                                            <connections>
+                                                                                <action selector="clickedBtnAddIngredients:" destination="OMr-Kf-831" eventType="touchUpInside" id="ftE-Al-Ura"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.93999999999999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="BSS-W6-OST" firstAttribute="top" secondItem="hHg-jY-XIU" secondAttribute="top" constant="10" id="1x8-EV-yjI"/>
+                                                                        <constraint firstItem="vOf-Eg-vd0" firstAttribute="centerX" secondItem="BSS-W6-OST" secondAttribute="centerX" id="3mb-Se-S9J"/>
+                                                                        <constraint firstItem="vOf-Eg-vd0" firstAttribute="height" secondItem="BSS-W6-OST" secondAttribute="height" id="9yG-Yd-w8d"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="BSS-W6-OST" secondAttribute="bottom" constant="10" id="GrL-jW-cz3"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="BSS-W6-OST" secondAttribute="trailing" constant="20" id="VpF-MF-lLX"/>
+                                                                        <constraint firstItem="vOf-Eg-vd0" firstAttribute="centerY" secondItem="BSS-W6-OST" secondAttribute="centerY" id="WLE-V8-s2c"/>
+                                                                        <constraint firstItem="BSS-W6-OST" firstAttribute="leading" secondItem="kJ6-3o-ams" secondAttribute="trailing" constant="20" id="WuS-uf-Dk9"/>
+                                                                        <constraint firstItem="vOf-Eg-vd0" firstAttribute="width" secondItem="BSS-W6-OST" secondAttribute="width" id="XNe-cF-fgd"/>
+                                                                        <constraint firstItem="kJ6-3o-ams" firstAttribute="leading" secondItem="hHg-jY-XIU" secondAttribute="leading" constant="20" id="Zdl-s5-GfR"/>
+                                                                        <constraint firstItem="kJ6-3o-ams" firstAttribute="top" secondItem="hHg-jY-XIU" secondAttribute="top" constant="10" id="erZ-uj-GTd"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <outlet property="headerLabel" destination="kJ6-3o-ams" id="Wdj-TR-lbi"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                    </tableView>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0JG-lg-SLI">
+                                                        <rect key="frame" x="20" y="616" width="374" height="260"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="cVI-qf-MAa">
+                                                                <rect key="frame" x="0.0" y="28" width="374" height="65"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cVI-qf-MAa" id="3YZ-bB-mcd">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEx-75-2t2" customClass="MFTextField">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="zEx-75-2t2" secondAttribute="trailing" id="nts-e4-ByN"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="zEx-75-2t2" secondAttribute="bottom" id="oiX-3e-0Jp"/>
+                                                                        <constraint firstItem="zEx-75-2t2" firstAttribute="top" secondItem="3YZ-bB-mcd" secondAttribute="top" id="owy-ED-RB5"/>
+                                                                        <constraint firstItem="zEx-75-2t2" firstAttribute="leading" secondItem="3YZ-bB-mcd" secondAttribute="leading" id="wyW-b6-VYT"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                            </tableViewCell>
                                                         </prototypes>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="4Nd-fN-N19" firstAttribute="top" secondItem="nYG-WW-SLE" secondAttribute="top" constant="20" id="6Sz-3w-fgb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0JG-lg-SLI" secondAttribute="bottom" constant="20" id="6mK-W3-VXb"/>
                                                     <constraint firstAttribute="height" constant="896" id="BEy-ZV-o5L"/>
                                                     <constraint firstAttribute="trailing" secondItem="zu2-jk-mG7" secondAttribute="trailing" constant="20" id="BvY-gm-xvl"/>
                                                     <constraint firstItem="DaJ-Vb-PIw" firstAttribute="top" secondItem="4Nd-fN-N19" secondAttribute="bottom" constant="20" id="Fvi-Ow-99U"/>
+                                                    <constraint firstItem="0JG-lg-SLI" firstAttribute="leading" secondItem="nYG-WW-SLE" secondAttribute="leading" constant="20" id="IiP-oE-ycg"/>
                                                     <constraint firstItem="DxP-v0-cnL" firstAttribute="height" secondItem="4Nd-fN-N19" secondAttribute="height" id="Ivi-1n-tht"/>
                                                     <constraint firstAttribute="trailing" secondItem="4Nd-fN-N19" secondAttribute="trailing" constant="20" id="LaR-pB-azp"/>
-                                                    <constraint firstAttribute="bottom" secondItem="zu2-jk-mG7" secondAttribute="bottom" id="XDg-qh-BuA"/>
+                                                    <constraint firstItem="0JG-lg-SLI" firstAttribute="top" secondItem="zu2-jk-mG7" secondAttribute="bottom" constant="20" id="Scu-M6-vKY"/>
                                                     <constraint firstItem="zu2-jk-mG7" firstAttribute="top" secondItem="DaJ-Vb-PIw" secondAttribute="bottom" constant="20" id="Y3H-Te-HlP"/>
                                                     <constraint firstItem="4Nd-fN-N19" firstAttribute="height" secondItem="nYG-WW-SLE" secondAttribute="height" multiplier="1/5" id="dIc-gQ-5Mg"/>
                                                     <constraint firstItem="4Nd-fN-N19" firstAttribute="leading" secondItem="nYG-WW-SLE" secondAttribute="leading" constant="20" id="i01-Kz-1dA"/>
                                                     <constraint firstItem="DaJ-Vb-PIw" firstAttribute="leading" secondItem="nYG-WW-SLE" secondAttribute="leading" constant="20" id="jof-L3-qe5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0JG-lg-SLI" secondAttribute="trailing" constant="20" id="lPm-Kl-AqF"/>
                                                     <constraint firstItem="DxP-v0-cnL" firstAttribute="width" secondItem="4Nd-fN-N19" secondAttribute="width" id="p5O-Hc-sRH"/>
                                                     <constraint firstItem="DxP-v0-cnL" firstAttribute="centerX" secondItem="4Nd-fN-N19" secondAttribute="centerX" id="pA4-mG-Rdz"/>
                                                     <constraint firstItem="zu2-jk-mG7" firstAttribute="leading" secondItem="nYG-WW-SLE" secondAttribute="leading" constant="20" id="pfb-Jd-DEf"/>
@@ -279,6 +359,7 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="addIngredientsTableView" destination="zu2-jk-mG7" id="pdu-ek-reL"/>
+                        <outlet property="addStepsTableView" destination="0JG-lg-SLI" id="biT-Jb-JwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2O-Qh-YrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,6 +451,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addbtn" width="16.5" height="16.5"/>
         <image name="placeholder" width="150" height="150"/>
         <image name="plus" width="256" height="256"/>
     </resources>

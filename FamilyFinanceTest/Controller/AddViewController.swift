@@ -10,14 +10,17 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    //MARK: - OUTLETS
+    
+    @IBOutlet weak var addIngredientsTableView: UITableView!
+    
     //MARK:- STORED PROPERTIES
     var choosenImage:UIImage?
     
     //MARK: - LIFECYCLE CALLS
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addIngredientsTableView.dataSource = self
     }
     
     //MARK: - INSTANCE METHODS
@@ -59,5 +62,29 @@ class AddViewController: UIViewController {
         Alertsheet.addAction(cancelAction)
         self.present(Alertsheet, animated: true)
     }
+    
+}
+
+//MARK: - EXTENSION FOR INGREDIENTS TABLE VIEW DATA SOURCE
+extension AddViewController : UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Add Ingredients"
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell
+        
+        return cell ?? UITableViewCell();
+    }
+    
     
 }

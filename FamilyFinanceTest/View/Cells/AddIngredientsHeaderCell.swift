@@ -1,22 +1,21 @@
 //
-//  ListTableViewCell.swift
+//  AddIngredientsHeaderCell.swift
 //  FamilyFinanceTest
 //
-//  Created by ÇağkanTaştekin on 2019. 06. 25..
-//  Copyright © 2019. ÇağkanTaştekin. All rights reserved.
+//  Created by chander bhushan on 27/06/19.
+//  Copyright © 2019 ÇağkanTaştekin. All rights reserved.
 //
 
 import UIKit
 
-class ListTableViewCell: UITableViewCell {
+class AddIngredientsHeaderCell: UITableViewCell {
 
-    @IBOutlet weak var imgRecipe: UIImageView!
-    @IBOutlet weak var lblRecipeName: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        imgRecipe.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

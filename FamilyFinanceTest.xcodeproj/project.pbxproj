@@ -14,6 +14,9 @@
 		1700C09C22C3FE0F00E628DD /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */; };
 		17C536E422C4847500997654 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E322C4847500997654 /* ImagePickerManager.swift */; };
 		17C536E622C48A9700997654 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E522C48A9700997654 /* Constants.swift */; };
+		17C536E822C4A03800997654 /* AddIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E722C4A03800997654 /* AddIngredientsTableViewCell.swift */; };
+		17C536EA22C4A6EB00997654 /* AddIngredientsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E922C4A6EB00997654 /* AddIngredientsHeaderCell.swift */; };
+		17C536EC22C4A73200997654 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C536EB22C4A73200997654 /* View.xib */; };
 		1E66543DE68B6DAADE78FBDF /* Pods_FamilyFinanceTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598AD95BDB91B2E8DC6199F2 /* Pods_FamilyFinanceTest.framework */; };
 		3E32070422C235AB00FF0E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32070322C235AB00FF0E3E /* AppDelegate.swift */; };
 		3E32070922C235AB00FF0E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E32070722C235AB00FF0E3E /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 		1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		17C536E322C4847500997654 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		17C536E522C48A9700997654 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		17C536E722C4A03800997654 /* AddIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		17C536E922C4A6EB00997654 /* AddIngredientsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsHeaderCell.swift; sourceTree = "<group>"; };
+		17C536EB22C4A73200997654 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		3E32070022C235AB00FF0E3E /* FamilyFinanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyFinanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E32070322C235AB00FF0E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E32070822C235AB00FF0E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 			children = (
 				1700C09922C3FDDE00E628DD /* SectionTableViewCell.swift */,
 				1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */,
+				17C536E722C4A03800997654 /* AddIngredientsTableViewCell.swift */,
+				17C536E922C4A6EB00997654 /* AddIngredientsHeaderCell.swift */,
+				17C536EB22C4A73200997654 /* View.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C536EC22C4A73200997654 /* View.xib in Resources */,
 				3E32071122C235AC00FF0E3E /* LaunchScreen.storyboard in Resources */,
 				3E32070E22C235AC00FF0E3E /* Assets.xcassets in Resources */,
 				3E32070922C235AB00FF0E3E /* Main.storyboard in Resources */,
@@ -295,12 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C536E822C4A03800997654 /* AddIngredientsTableViewCell.swift in Sources */,
 				1700C09C22C3FE0F00E628DD /* IngredientsTableViewCell.swift in Sources */,
 				3E32071922C2362600FF0E3E /* DetailViewController.swift in Sources */,
 				1700C09222C3E5BA00E628DD /* Utile.swift in Sources */,
 				3E32070C22C235AB00FF0E3E /* FamilyFinanceTest.xcdatamodeld in Sources */,
 				3E32071F22C2375100FF0E3E /* AddViewController.swift in Sources */,
 				1700C09522C3E64600E628DD /* UIDevice+Extension.swift in Sources */,
+				17C536EA22C4A6EB00997654 /* AddIngredientsHeaderCell.swift in Sources */,
 				1700C09A22C3FDDE00E628DD /* SectionTableViewCell.swift in Sources */,
 				17C536E622C48A9700997654 /* Constants.swift in Sources */,
 				3E32070422C235AB00FF0E3E /* AppDelegate.swift in Sources */,

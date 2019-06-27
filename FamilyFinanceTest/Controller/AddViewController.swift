@@ -9,15 +9,21 @@
 import UIKit
 
 class AddViewController: UIViewController {
-
-    //MARK: - OUTLETS
     
+    //MARK: - OUTLETS
     @IBOutlet weak var addIngredientsTableView: UITableView!
     @IBOutlet weak var addStepsTableView: UITableView!
+    
+    
     //MARK:- STORED PROPERTIES
-    var choosenImage:UIImage?
     var numberOfRowsForAddIngredients:Int = 1
     var numberOfRowsForAddSteps:Int = 1
+    
+    var choosenImage:UIImage?
+    var ingredientCells:[AddIngredientsTableViewCell]?
+    var stepsCells:[AddStepsTableViewCell]?
+    var receipeModel:PageData?
+    
     //MARK: - LIFECYCLE CALLS
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,13 @@ class AddViewController: UIViewController {
         addIngredientsTableView.delegate = self
         addStepsTableView.dataSource = self
         addStepsTableView.delegate = self
+        
+        self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
+    }
+    
+    //MARK: - INSTANCE METHODS
+    
+    func configureNavigationBar(){
         //configure navigation bar
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black,  NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -33,11 +46,10 @@ class AddViewController: UIViewController {
         
         let rightBarButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveReceipe))
         self.navigationItem.setRightBarButton(rightBarButton, animated: true)
-        
-        self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
-    //MARK: - INSTANCE METHODS
+    
+    
     func openCamera(){
         ImagePickerManager.shared.pickImageFromCamera(editing: true) { (image, error) in
             if error == nil{
@@ -47,6 +59,8 @@ class AddViewController: UIViewController {
             }
         }
     }
+    
+    
     
     func chooseFromGallery(){
         ImagePickerManager.shared.pickImageFromPhotoLibrary(editing: true) { (image, error) in
@@ -77,6 +91,8 @@ class AddViewController: UIViewController {
         self.present(Alertsheet, animated: true)
     }
     
+    
+    
     @objc func saveReceipe(){
         debugPrint("Receipe Saved")
     }
@@ -104,7 +120,7 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-       
+        
         if tableView == addIngredientsTableView{
             let header = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsHeaderCell")! as! AddIngredientsHeaderCell
             header.delegate = self
@@ -119,10 +135,12 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == addIngredientsTableView{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell
-        return cell ?? UITableViewCell();
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell
+            self.ingredientCells?.append(cell!)
+            return cell ?? UITableViewCell();
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddStepsTableViewCell") as? AddStepsTableViewCell
+            self.stepsCells?.append(cell!)
             return cell ?? UITableViewCell();
         }
     }
@@ -130,8 +148,8 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
 
 extension AddViewController : AddIngredientsHeaderCellDelegate{
     func addIngredientsBtnClicked() {
-            self.numberOfRowsForAddIngredients += 1
-            self.addIngredientsTableView.reloadData()
+        self.numberOfRowsForAddIngredients += 1
+        self.addIngredientsTableView.reloadData()
     }
 }
 

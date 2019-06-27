@@ -37,7 +37,7 @@ class AddViewController: UIViewController {
         addStepsTableView.dataSource = self
         addStepsTableView.delegate = self
         configureNavigationBar()
-         self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
+        self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -176,6 +176,7 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
 extension AddViewController : AddIngredientsHeaderCellDelegate{
     func addIngredientsBtnClicked() {
         self.numberOfRowsForAddIngredients += 1
+        self.ingredientCells.removeAll()
         self.addIngredientsTableView.reloadData()
     }
 }
@@ -184,6 +185,7 @@ extension AddViewController : AddIngredientsHeaderCellDelegate{
 extension AddViewController : AddStepsHeaderCellDelegate {
     func addStepsBtnClicked() {
         self.numberOfRowsForAddSteps += 1
+        self.stepsCells.removeAll()
         self.addStepsTableView.reloadData()
     }
 }

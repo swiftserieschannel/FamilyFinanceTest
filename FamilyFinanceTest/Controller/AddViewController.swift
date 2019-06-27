@@ -25,7 +25,15 @@ class AddViewController: UIViewController {
         addIngredientsTableView.delegate = self
         addStepsTableView.dataSource = self
         addStepsTableView.delegate = self
-        //
+        //configure navigation bar
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black,  NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.visibleViewController?.navigationItem.title = "Add Receipe"
+        
+        let rightBarButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveReceipe))
+        self.navigationItem.setRightBarButton(rightBarButton, animated: true)
+        
         self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
@@ -67,6 +75,10 @@ class AddViewController: UIViewController {
         Alertsheet.addAction(galleryAction)
         Alertsheet.addAction(cancelAction)
         self.present(Alertsheet, animated: true)
+    }
+    
+    @objc func saveReceipe(){
+        debugPrint("Receipe Saved")
     }
     
 }

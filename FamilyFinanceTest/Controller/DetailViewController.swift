@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     
     //MARK:- STORED PROPERTIES
     var receipe:PageData?
-    
+    var numberOfRowAtSections:[Int]?
     //MARK:- LIFECYCLE CALLS
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
         foodImage.layer.cornerRadius = 5
         self.ingredientsTableView.dataSource = self
         self.ingredientsTableView.rowHeight = UITableView.automaticDimension
-        debugPrint(receipe)
+        numberOfRowAtSections = [receipe?.ingredients.count,receipe?.steps.count] as? [Int]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,25 +41,41 @@ class DetailViewController: UIViewController {
 
 //MARK:- EXTENSION FOR INGREDIENTS TABLE VIEW DATASOURCE
 extension DetailViewController : UITableViewDataSource{
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
         return "Ingredients"
+        }else{
+            return "Steps"
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return receipe?.ingredients.count ?? 0
+        var rows: Int = 0
+        if section < numberOfRowAtSections?.count ?? 0 {
+            rows = numberOfRowAtSections?[section] ?? 0
+        }
+        return rows
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsTableViewCell") as? IngredientsTableViewCell
+        if indexPath.section == 0 {
         cell?.ingredientsTextLabel.text = receipe?.ingredients[indexPath.row].name
         cell?.ingredientsTypeLabel.text = receipe?.ingredients[indexPath.row].type
         cell?.ingredientsQuantity.text = receipe?.ingredients[indexPath.row].quantity
+        }else{
+            cell?.ingredientsTextLabel.text = receipe?.steps[indexPath.row - (receipe?.ingredients.count ?? 0 - 1)]
+            cell?.ingredientsTypeLabel.isHidden = true
+            cell?.ingredientsQuantity.isHidden = true
+        }
         return cell ?? UITableViewCell()
     }
     

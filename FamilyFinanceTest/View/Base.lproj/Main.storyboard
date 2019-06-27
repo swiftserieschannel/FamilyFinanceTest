@@ -277,14 +277,14 @@
                                                         <rect key="frame" x="20" y="616" width="374" height="260"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="cVI-qf-MAa">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddStepsTableViewCell" rowHeight="65" id="cVI-qf-MAa" customClass="AddStepsTableViewCell" customModule="FamilyFinanceTest" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="374" height="65"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cVI-qf-MAa" id="3YZ-bB-mcd">
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEx-75-2t2" customClass="MFTextField">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Steps Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEx-75-2t2" customClass="MFTextField">
                                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="64.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -298,6 +298,47 @@
                                                                         <constraint firstItem="zEx-75-2t2" firstAttribute="leading" secondItem="3YZ-bB-mcd" secondAttribute="leading" id="wyW-b6-VYT"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
+                                                            </tableViewCell>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddStepsHeaderCell" id="WAf-0t-6pb" customClass="AddStepsHeaderCell" customModule="FamilyFinanceTest" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="93" width="374" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WAf-0t-6pb" id="nON-nV-ylD">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLa-Fp-cox">
+                                                                            <rect key="frame" x="20" y="10.5" width="84.5" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addbtn" translatesAutoresizingMaskIntoConstraints="NO" id="C7O-pD-Q4z">
+                                                                            <rect key="frame" x="329" y="10.5" width="25" height="25"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="25" id="2dF-f1-B3I"/>
+                                                                                <constraint firstAttribute="height" constant="25" id="6qP-bA-uun"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdg-23-D4R">
+                                                                            <rect key="frame" x="329" y="10.5" width="25" height="25"/>
+                                                                            <connections>
+                                                                                <action selector="clickedBtnAddSteps:" destination="WAf-0t-6pb" eventType="touchUpInside" id="ELo-no-CMo"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="pdg-23-D4R" firstAttribute="centerX" secondItem="C7O-pD-Q4z" secondAttribute="centerX" id="ARU-yJ-3kT"/>
+                                                                        <constraint firstItem="zLa-Fp-cox" firstAttribute="leading" secondItem="nON-nV-ylD" secondAttribute="leading" constant="20" id="BBR-5s-chC"/>
+                                                                        <constraint firstItem="zLa-Fp-cox" firstAttribute="top" secondItem="nON-nV-ylD" secondAttribute="top" constant="10" id="EfK-C1-qNC"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="C7O-pD-Q4z" secondAttribute="trailing" constant="20" id="L7I-NJ-3Hn"/>
+                                                                        <constraint firstItem="pdg-23-D4R" firstAttribute="centerY" secondItem="C7O-pD-Q4z" secondAttribute="centerY" id="Mpx-mK-SrN"/>
+                                                                        <constraint firstItem="pdg-23-D4R" firstAttribute="width" secondItem="C7O-pD-Q4z" secondAttribute="width" id="Tc8-rJ-iVf"/>
+                                                                        <constraint firstItem="C7O-pD-Q4z" firstAttribute="top" secondItem="nON-nV-ylD" secondAttribute="top" constant="10" id="YYn-Fv-vZi"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="C7O-pD-Q4z" secondAttribute="bottom" constant="10" id="nfV-NS-EVz"/>
+                                                                        <constraint firstItem="pdg-23-D4R" firstAttribute="height" secondItem="C7O-pD-Q4z" secondAttribute="height" id="yq8-dm-AP5"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <color key="backgroundColor" white="0.93999999999999995" alpha="0.84705882352941175" colorSpace="calibratedWhite"/>
                                                             </tableViewCell>
                                                         </prototypes>
                                                     </tableView>

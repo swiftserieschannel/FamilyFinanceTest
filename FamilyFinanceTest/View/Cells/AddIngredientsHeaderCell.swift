@@ -12,12 +12,12 @@ protocol AddIngredientsHeaderCellDelegate{
     func addIngredientsBtnClicked()
 }
 
+
 class AddIngredientsHeaderCell: UITableViewCell {
 
     
     @IBOutlet weak var headerLabel: UILabel!
     var delegate:AddIngredientsHeaderCellDelegate?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

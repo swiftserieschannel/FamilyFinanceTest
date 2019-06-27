@@ -26,7 +26,7 @@ class AddViewController: UIViewController {
         addStepsTableView.dataSource = self
         addStepsTableView.delegate = self
         //
-        //self.addIngredientsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
+        self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
     //MARK: - INSTANCE METHODS
@@ -79,7 +79,12 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  numberOfRowsForAddIngredients
+        if tableView == self.addIngredientsTableView {
+            return  numberOfRowsForAddIngredients
+        }else{
+            return numberOfRowsForAddSteps
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -87,23 +92,40 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsHeaderCell")! as! AddIngredientsHeaderCell
-        header.delegate = self
-        return header
+       
+        if tableView == addIngredientsTableView{
+            let header = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsHeaderCell")! as! AddIngredientsHeaderCell
+            header.delegate = self
+            return header
+        }else{
+            let header = tableView.dequeueReusableCell(withIdentifier: "AddStepsHeaderCell")! as! AddStepsHeaderCell
+            header.delegate = self
+            return header
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == addIngredientsTableView{
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell
-        
         return cell ?? UITableViewCell();
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddStepsTableViewCell") as? AddStepsTableViewCell
+            return cell ?? UITableViewCell();
+        }
     }
 }
 
 extension AddViewController : AddIngredientsHeaderCellDelegate{
     func addIngredientsBtnClicked() {
-        self.numberOfRowsForAddIngredients += 1
-        self.addIngredientsTableView.reloadData()
+            self.numberOfRowsForAddIngredients += 1
+            self.addIngredientsTableView.reloadData()
     }
-    
-    
+}
+
+extension AddViewController : AddStepsHeaderCellDelegate {
+    func addStepsBtnClicked() {
+        self.numberOfRowsForAddSteps += 1
+        self.addStepsTableView.reloadData()
+    }
 }

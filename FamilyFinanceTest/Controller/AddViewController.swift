@@ -23,8 +23,8 @@ class AddViewController: UIViewController {
     var numberOfRowsForAddSteps:Int = 1
     
     var choosenImage:UIImage?
-    var ingredientCells:[AddIngredientsTableViewCell]?
-    var stepsCells:[AddStepsTableViewCell]?
+    var ingredientCells = [AddIngredientsTableViewCell]()
+    var stepsCells = [AddStepsTableViewCell]()
     var receipeModel:PageData?
     
     
@@ -83,14 +83,14 @@ class AddViewController: UIViewController {
     
     
     func prepareReceipeRequestModel()->PageData{
-        var ingredients:[Ingredient]?
-        var steps:[String]?
-        for cell in self.ingredientCells!{
-            ingredients?.append(Ingredient(name: cell.nameTF.text, quantity: cell.quantityTF.text, type: cell.typeTF.text))
+        var ingredients = [Ingredient]()
+        var steps = [String]()
+        for cell in self.ingredientCells{
+            ingredients.append(Ingredient(name: cell.nameTF.text, quantity: cell.quantityTF.text, type: cell.typeTF.text))
         }
         
-        for cell in self.stepsCells! {
-            steps?.append(cell.stepTextField?.text ?? "")
+        for cell in self.stepsCells {
+            steps.append(cell.stepTextField?.text ?? "")
         }
         return PageData(name: receipeNameTF.text, imgUrl: "", ingredients: ingredients ?? [], steps: steps ?? [])
     }
@@ -162,11 +162,11 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == addIngredientsTableView{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell
-            self.ingredientCells?.append(cell!)
+            self.ingredientCells.append(cell!)
             return cell ?? UITableViewCell();
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddStepsTableViewCell") as? AddStepsTableViewCell
-            self.stepsCells?.append(cell!)
+            self.stepsCells.append(cell!)
             return cell ?? UITableViewCell();
         }
     }

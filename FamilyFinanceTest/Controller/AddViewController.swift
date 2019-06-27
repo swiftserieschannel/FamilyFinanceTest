@@ -115,7 +115,8 @@ class AddViewController: UIViewController {
     
     
     @objc func saveReceipe(){
-        prepareReceipeRequestModel()
+        let receipeRequestModel:PageData =  prepareReceipeRequestModel()
+        debugPrint(receipeRequestModel)
         debugPrint("Receipe Saved")
     }
     

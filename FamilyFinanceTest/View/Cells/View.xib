@@ -12,13 +12,51 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="156"/>
+        <view contentMode="scaleToFill" restorationIdentifier="AddIngredientsHeaderCell" id="iN0-l3-epB" customClass="AddIngredientsHeaderCell" customModule="FamilyFinanceTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPw-HX-oTJ">
+                    <rect key="frame" x="20" y="44" width="329" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addbtn" translatesAutoresizingMaskIntoConstraints="NO" id="hra-PR-WVc">
+                    <rect key="frame" x="369" y="44" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="6CT-Qb-R6A"/>
+                        <constraint firstAttribute="width" constant="25" id="v9m-tN-J4Q"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTI-g7-pRY">
+                    <rect key="frame" x="369" y="44" width="25" height="25"/>
+                    <connections>
+                        <action selector="clickedBtnAddIngredients:" destination="iN0-l3-epB" eventType="touchUpInside" id="h8d-YF-0A7"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="0.94187000570776247" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hra-PR-WVc" firstAttribute="leading" secondItem="qPw-HX-oTJ" secondAttribute="trailing" constant="20" id="4CI-yH-GZ8"/>
+                <constraint firstItem="hra-PR-WVc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="KLu-cK-1Ba"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hra-PR-WVc" secondAttribute="trailing" constant="20" id="MeQ-Uy-KJe"/>
+                <constraint firstItem="kTI-g7-pRY" firstAttribute="width" secondItem="hra-PR-WVc" secondAttribute="width" id="PWQ-sV-WMb"/>
+                <constraint firstItem="kTI-g7-pRY" firstAttribute="centerY" secondItem="hra-PR-WVc" secondAttribute="centerY" id="fPE-eO-yRz"/>
+                <constraint firstItem="qPw-HX-oTJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rYf-Hj-diN"/>
+                <constraint firstItem="qPw-HX-oTJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sAr-jA-ohm"/>
+                <constraint firstItem="kTI-g7-pRY" firstAttribute="centerX" secondItem="hra-PR-WVc" secondAttribute="centerX" id="vXh-Ug-kaW"/>
+                <constraint firstItem="kTI-g7-pRY" firstAttribute="height" secondItem="hra-PR-WVc" secondAttribute="height" id="xwj-XG-pvc"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="-127.23214285714285"/>
+            <connections>
+                <outlet property="headerLabel" destination="qPw-HX-oTJ" id="IEn-g4-SQm"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-146.31696428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="addbtn" width="16.5" height="16.5"/>
+    </resources>
 </document>

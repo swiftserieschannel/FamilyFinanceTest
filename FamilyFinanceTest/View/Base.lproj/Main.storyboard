@@ -173,11 +173,8 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-jk-mG7">
-                                                        <rect key="frame" x="20" y="272" width="374" height="86"/>
+                                                        <rect key="frame" x="20" y="272" width="374" height="624"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="86" id="6aH-6T-2xl"/>
-                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddIngredientsTableViewCell" rowHeight="60" id="1f9-cm-3tG" customClass="AddIngredientsTableViewCell" customModule="FamilyFinanceTest" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="374" height="60"/>
@@ -187,13 +184,13 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oD-dl-all" customClass="MFTextField">
-                                                                            <rect key="frame" x="10" y="10" width="129.5" height="39.5"/>
+                                                                            <rect key="frame" x="10" y="10" width="129.5" height="40"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-Jj-Qtg" customClass="MFTextField">
-                                                                            <rect key="frame" x="149.5" y="10" width="129.5" height="39.5"/>
+                                                                            <rect key="frame" x="149.5" y="10" width="129.5" height="40"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -236,6 +233,7 @@
                                                     <constraint firstItem="DaJ-Vb-PIw" firstAttribute="top" secondItem="4Nd-fN-N19" secondAttribute="bottom" constant="20" id="Fvi-Ow-99U"/>
                                                     <constraint firstItem="DxP-v0-cnL" firstAttribute="height" secondItem="4Nd-fN-N19" secondAttribute="height" id="Ivi-1n-tht"/>
                                                     <constraint firstAttribute="trailing" secondItem="4Nd-fN-N19" secondAttribute="trailing" constant="20" id="LaR-pB-azp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zu2-jk-mG7" secondAttribute="bottom" id="XDg-qh-BuA"/>
                                                     <constraint firstItem="zu2-jk-mG7" firstAttribute="top" secondItem="DaJ-Vb-PIw" secondAttribute="bottom" constant="20" id="Y3H-Te-HlP"/>
                                                     <constraint firstItem="4Nd-fN-N19" firstAttribute="height" secondItem="nYG-WW-SLE" secondAttribute="height" multiplier="1/5" id="dIc-gQ-5Mg"/>
                                                     <constraint firstItem="4Nd-fN-N19" firstAttribute="leading" secondItem="nYG-WW-SLE" secondAttribute="leading" constant="20" id="i01-Kz-1dA"/>

@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol AddIngredientsHeaderCellDelegate{
+    func addIngredientsBtnClicked()
+}
+
 class AddIngredientsHeaderCell: UITableViewCell {
 
     
-    
+    @IBOutlet weak var headerLabel: UILabel!
+    var delegate:AddIngredientsHeaderCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +29,7 @@ class AddIngredientsHeaderCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func clickedBtnAddIngredients(_ sender: Any) {
+        delegate?.addIngredientsBtnClicked()
+    }
 }

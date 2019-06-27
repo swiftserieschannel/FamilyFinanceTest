@@ -21,6 +21,8 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addIngredientsTableView.dataSource = self
+        addIngredientsTableView.delegate = self
+        self.addIngredientsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
     //MARK: - INSTANCE METHODS
@@ -66,7 +68,7 @@ class AddViewController: UIViewController {
 }
 
 //MARK: - EXTENSION FOR INGREDIENTS TABLE VIEW DATA SOURCE
-extension AddViewController : UITableViewDataSource{
+extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -76,9 +78,22 @@ extension AddViewController : UITableViewDataSource{
         return  1
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Add Ingredients"
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 160
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsHeaderCell")! as! AddIngredientsHeaderCell
+//        header._lblGroupName.text = ""
+//        header._btnExpand.addTarget(self, action: "hideSection:", forControlEvents: .TouchUpInside)
+//
+//        header._lblTotalCount.text = ""
+        return header.contentView
+    }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Add Ingredients"
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddIngredientsTableViewCell") as? AddIngredientsTableViewCell

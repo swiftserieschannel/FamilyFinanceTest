@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import MaterialTextField
 class AddViewController: UIViewController {
     
     //MARK: - OUTLETS
     @IBOutlet weak var addIngredientsTableView: UITableView!
     @IBOutlet weak var addStepsTableView: UITableView!
+    @IBOutlet weak var receipeNameTF: MFTextField!
+    
+    
     
     
     //MARK:- STORED PROPERTIES
@@ -24,6 +27,8 @@ class AddViewController: UIViewController {
     var stepsCells:[AddStepsTableViewCell]?
     var receipeModel:PageData?
     
+    
+    
     //MARK: - LIFECYCLE CALLS
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +36,10 @@ class AddViewController: UIViewController {
         addIngredientsTableView.delegate = self
         addStepsTableView.dataSource = self
         addStepsTableView.delegate = self
-        
-        self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
+         self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
+    
+    
     
     //MARK: - INSTANCE METHODS
     
@@ -73,6 +79,21 @@ class AddViewController: UIViewController {
     }
     
     
+    func prepareReceipeRequestModel()->PageData{
+        var ingredients:[Ingredient]?
+        var steps:[String]?
+        for cell in self.ingredientCells!{
+            ingredients?.append(Ingredient(name: cell.nameTF.text, quantity: cell.quantityTF.text, type: cell.typeTF.text))
+        }
+        
+        for cell in self.stepsCells! {
+            steps?.append(cell.stepTextField?.text ?? "")
+        }
+        return PageData(name: receipeNameTF.text, imgUrl: "", ingredients: ingredients ?? [], steps: steps ?? [])
+    }
+    
+    
+    
     //MARK: - SCREEN ACTIONS
     @IBAction func chooseImage(_ sender: Any) {
         let Alertsheet = UIAlertController(title: "Choose From...", message: nil, preferredStyle: .actionSheet)
@@ -94,6 +115,7 @@ class AddViewController: UIViewController {
     
     
     @objc func saveReceipe(){
+        prepareReceipeRequestModel()
         debugPrint("Receipe Saved")
     }
     
@@ -146,6 +168,7 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
     }
 }
 
+//MARK: - DELEGATE FOR ADD INGREADIENTS CELL
 extension AddViewController : AddIngredientsHeaderCellDelegate{
     func addIngredientsBtnClicked() {
         self.numberOfRowsForAddIngredients += 1
@@ -153,6 +176,7 @@ extension AddViewController : AddIngredientsHeaderCellDelegate{
     }
 }
 
+//MARK: - DELEGATE FOR ADD STEPS CELL
 extension AddViewController : AddStepsHeaderCellDelegate {
     func addStepsBtnClicked() {
         self.numberOfRowsForAddSteps += 1

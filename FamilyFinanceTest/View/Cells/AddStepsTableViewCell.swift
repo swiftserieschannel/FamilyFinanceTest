@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+import MaterialTextField
 class AddStepsTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var stepTextField: MFTextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

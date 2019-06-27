@@ -299,6 +299,9 @@
                                                                         <constraint firstItem="zEx-75-2t2" firstAttribute="leading" secondItem="3YZ-bB-mcd" secondAttribute="leading" id="wyW-b6-VYT"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="stepTextField" destination="zEx-75-2t2" id="DY0-Hd-hry"/>
+                                                                </connections>
                                                             </tableViewCell>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddStepsHeaderCell" id="WAf-0t-6pb" customClass="AddStepsHeaderCell" customModule="FamilyFinanceTest" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="93" width="374" height="44"/>
@@ -402,6 +405,7 @@
                     <connections>
                         <outlet property="addIngredientsTableView" destination="zu2-jk-mG7" id="pdu-ek-reL"/>
                         <outlet property="addStepsTableView" destination="0JG-lg-SLI" id="biT-Jb-JwR"/>
+                        <outlet property="receipeNameTF" destination="DaJ-Vb-PIw" id="fbH-Bn-URk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2O-Qh-YrX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -36,10 +36,13 @@ class AddViewController: UIViewController {
         addIngredientsTableView.delegate = self
         addStepsTableView.dataSource = self
         addStepsTableView.delegate = self
+        configureNavigationBar()
          self.addStepsTableView.register(AddIngredientsHeaderCell.self, forCellReuseIdentifier: "AddIngredientsHeaderCell")
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.endEditing(true)
+    }
     
     //MARK: - INSTANCE METHODS
     

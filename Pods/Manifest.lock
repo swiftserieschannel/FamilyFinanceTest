@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - MaterialTextField (0.2.1)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
@@ -7,20 +8,23 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - MaterialTextField
   - SDWebImage (= 4.4.2)
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - MaterialTextField
     - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  MaterialTextField: f876a39d571eeece872af6a4da421e3bd065fe0b
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: feebdf30d0195902e6fe4891ca4ae076c2b8ed0e
+PODFILE CHECKSUM: 681edeefd28cbedb9b8e2253bbd2acd299baf825
 
 COCOAPODS: 1.7.1

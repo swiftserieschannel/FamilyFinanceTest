@@ -9,4 +9,5 @@ target 'FamilyFinanceTest' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'SDWebImage' , '4.4.2'
+pod 'MaterialTextField'
 end

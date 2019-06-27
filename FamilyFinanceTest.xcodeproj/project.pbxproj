@@ -12,6 +12,8 @@
 		1700C09722C3E69100E628DD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09622C3E69100E628DD /* UIColor+Extension.swift */; };
 		1700C09A22C3FDDE00E628DD /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09922C3FDDE00E628DD /* SectionTableViewCell.swift */; };
 		1700C09C22C3FE0F00E628DD /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */; };
+		17C536E422C4847500997654 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E322C4847500997654 /* ImagePickerManager.swift */; };
+		17C536E622C48A9700997654 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E522C48A9700997654 /* Constants.swift */; };
 		1E66543DE68B6DAADE78FBDF /* Pods_FamilyFinanceTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598AD95BDB91B2E8DC6199F2 /* Pods_FamilyFinanceTest.framework */; };
 		3E32070422C235AB00FF0E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32070322C235AB00FF0E3E /* AppDelegate.swift */; };
 		3E32070922C235AB00FF0E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E32070722C235AB00FF0E3E /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		1700C09622C3E69100E628DD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1700C09922C3FDDE00E628DD /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		17C536E322C4847500997654 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		17C536E522C48A9700997654 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3E32070022C235AB00FF0E3E /* FamilyFinanceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyFinanceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E32070322C235AB00FF0E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E32070822C235AB00FF0E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,7 +67,9 @@
 		1700C09022C3E56000E628DD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				17C536E322C4847500997654 /* ImagePickerManager.swift */,
 				1700C09122C3E5BA00E628DD /* Utile.swift */,
+				17C536E522C48A9700997654 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -296,10 +302,12 @@
 				3E32071F22C2375100FF0E3E /* AddViewController.swift in Sources */,
 				1700C09522C3E64600E628DD /* UIDevice+Extension.swift in Sources */,
 				1700C09A22C3FDDE00E628DD /* SectionTableViewCell.swift in Sources */,
+				17C536E622C48A9700997654 /* Constants.swift in Sources */,
 				3E32070422C235AB00FF0E3E /* AppDelegate.swift in Sources */,
 				3E32072522C2415F00FF0E3E /* ListDataModal.swift in Sources */,
 				3E32071B22C2364E00FF0E3E /* ListTableViewController.swift in Sources */,
 				3E32071D22C236B400FF0E3E /* ListTableViewCell.swift in Sources */,
+				17C536E422C4847500997654 /* ImagePickerManager.swift in Sources */,
 				1700C09722C3E69100E628DD /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

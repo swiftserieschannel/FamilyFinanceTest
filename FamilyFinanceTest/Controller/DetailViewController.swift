@@ -72,7 +72,7 @@ extension DetailViewController : UITableViewDataSource{
         cell?.ingredientsTypeLabel.text = receipe?.ingredients[indexPath.row].type
         cell?.ingredientsQuantity.text = receipe?.ingredients[indexPath.row].quantity
         }else{
-            cell?.ingredientsTextLabel.text = receipe?.steps[indexPath.row - (receipe?.ingredients.count ?? 0 - 1)]
+            cell?.ingredientsTextLabel.text = receipe?.steps[indexPath.row]
             cell?.ingredientsTypeLabel.isHidden = true
             cell?.ingredientsQuantity.isHidden = true
         }

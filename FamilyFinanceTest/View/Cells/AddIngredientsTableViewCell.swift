@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialTextField
+
 class AddIngredientsTableViewCell: UITableViewCell {
 
     
@@ -19,5 +20,5 @@ class AddIngredientsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }

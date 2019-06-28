@@ -8,8 +8,9 @@
 
 import UIKit
 import MaterialTextField
-class AddStepsTableViewCell: UITableViewCell {
 
+
+class AddStepsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var stepTextField: MFTextField!
     

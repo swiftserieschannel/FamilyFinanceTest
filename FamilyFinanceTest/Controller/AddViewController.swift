@@ -167,6 +167,7 @@ extension AddViewController : UITableViewDataSource, UITableViewDelegate{
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddStepsTableViewCell") as? AddStepsTableViewCell
             self.stepsCells.append(cell!)
+            cell?.stepTextField.placeholder = "Step \(indexPath.row+1)"
             return cell ?? UITableViewCell();
         }
     }
@@ -189,3 +190,4 @@ extension AddViewController : AddStepsHeaderCellDelegate {
         self.addStepsTableView.reloadData()
     }
 }
+

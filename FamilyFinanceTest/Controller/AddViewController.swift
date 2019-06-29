@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialTextField
+import Alamofire
 class AddViewController: UIViewController {
     
     //MARK: - OUTLETS
@@ -119,10 +120,47 @@ class AddViewController: UIViewController {
     
     @objc func saveReceipe(){
         let receipeRequestModel:PageData =  prepareReceipeRequestModel()
-        debugPrint(receipeRequestModel)
-        debugPrint("Receipe Saved")
+        //        debugPrint(receipeRequestModel)
+        //        debugPrint("Receipe Saved")
+        if Utile.isInternetAvailable(){
+        postReceipeAPICall(receipeRequestModel:receipeRequestModel)
+        }else{
+            // Declare Alert message
+            let dialogMessage = UIAlertController(title: Alerts.KALERT, message: "Please Check Your Internet Connection", preferredStyle: .alert)
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: Alerts.KAlertRetry, style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+                
+            })
+            // Create Cancel button with action handlder
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                dialogMessage.dismiss(animated: true, completion: nil)
+            }
+            //Add OK and Cancel button to dialog message
+            dialogMessage.addAction(ok)
+            dialogMessage.addAction(cancel)
+            // Present dialog message to user
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
     }
     
+    
+    func postReceipeAPICall(receipeRequestModel:PageData){
+        var params = [String:Any]();
+        params["name"] = receipeRequestModel.name ?? ""
+        params["imgUrl"] = ""
+        var ingredients = [[String:String]()]
+        for ing in receipeRequestModel.ingredients {
+            ingredients.append(["name":ing.name ?? "","quantity":ing.quantity ?? "","type":ing.type ?? ""])
+        }
+        params["ingredients"] = ingredients
+        params["steps"] = receipeRequestModel.steps
+        debugPrint(params)
+            Alamofire.request(URL(string: "​http://94.177.216.191:7072/​uploadRecipe")!, method: .post, parameters: params, encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    print(response)
+        }
+    }
 }
 
 //MARK: - EXTENSION FOR INGREDIENTS TABLE VIEW DATA SOURCE

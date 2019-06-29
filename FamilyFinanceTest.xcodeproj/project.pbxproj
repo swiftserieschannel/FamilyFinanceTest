@@ -12,6 +12,7 @@
 		1700C09722C3E69100E628DD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09622C3E69100E628DD /* UIColor+Extension.swift */; };
 		1700C09A22C3FDDE00E628DD /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09922C3FDDE00E628DD /* SectionTableViewCell.swift */; };
 		1700C09C22C3FE0F00E628DD /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */; };
+		173E3C0122C758D000C0EE48 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173E3C0022C758D000C0EE48 /* UIViewController+Extension.swift */; };
 		17B1E6A522C4F28A0011613F /* AddStepsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1E6A422C4F28A0011613F /* AddStepsHeaderCell.swift */; };
 		17B1E6A722C4F7690011613F /* AddStepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1E6A622C4F7690011613F /* AddStepsTableViewCell.swift */; };
 		17C536E422C4847500997654 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C536E322C4847500997654 /* ImagePickerManager.swift */; };
@@ -38,6 +39,7 @@
 		1700C09622C3E69100E628DD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1700C09922C3FDDE00E628DD /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		1700C09B22C3FE0F00E628DD /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		173E3C0022C758D000C0EE48 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		17B1E6A422C4F28A0011613F /* AddStepsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepsHeaderCell.swift; sourceTree = "<group>"; };
 		17B1E6A622C4F7690011613F /* AddStepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepsTableViewCell.swift; sourceTree = "<group>"; };
 		17C536E322C4847500997654 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				1700C09422C3E64600E628DD /* UIDevice+Extension.swift */,
 				1700C09622C3E69100E628DD /* UIColor+Extension.swift */,
+				173E3C0022C758D000C0EE48 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				3E32070C22C235AB00FF0E3E /* FamilyFinanceTest.xcdatamodeld in Sources */,
 				3E32071F22C2375100FF0E3E /* AddViewController.swift in Sources */,
 				1700C09522C3E64600E628DD /* UIDevice+Extension.swift in Sources */,
+				173E3C0122C758D000C0EE48 /* UIViewController+Extension.swift in Sources */,
 				17C536EA22C4A6EB00997654 /* AddIngredientsHeaderCell.swift in Sources */,
 				17B1E6A722C4F7690011613F /* AddStepsTableViewCell.swift in Sources */,
 				1700C09A22C3FDDE00E628DD /* SectionTableViewCell.swift in Sources */,

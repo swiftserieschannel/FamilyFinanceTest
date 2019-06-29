@@ -152,9 +152,10 @@ class AddViewController: UIViewController {
         for ing in receipeRequestModel.ingredients {
             ingredients.append(["name":ing.name ?? "","quantity":ing.quantity ?? "","type":ing.type ?? ""])
         }
+        ingredients.remove(at: 0)
         params["ingredients"] = ingredients
         params["steps"] = receipeRequestModel.steps
-        debugPrint(params)
+        //debugPrint(params)
         let url = URL.init(string: "http://92.177.216.191:7072/uploadRecipe")!
         Utile.showActivityIndicator()
         Alamofire.request(url, method: .post , parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in

@@ -123,14 +123,13 @@ class AddViewController: UIViewController {
         //        debugPrint(receipeRequestModel)
         //        debugPrint("Receipe Saved")
         if Utile.isInternetAvailable(){
-        postReceipeAPICall(receipeRequestModel:receipeRequestModel)
+            postReceipeAPICall(receipeRequestModel:receipeRequestModel)
         }else{
             // Declare Alert message
             let dialogMessage = UIAlertController(title: Alerts.KALERT, message: "Please Check Your Internet Connection", preferredStyle: .alert)
             // Create OK button with action handler
             let ok = UIAlertAction(title: Alerts.KAlertRetry, style: .default, handler: { (action) -> Void in
-                print("Ok button tapped")
-                
+                self.postReceipeAPICall(receipeRequestModel:receipeRequestModel)
             })
             // Create Cancel button with action handlder
             let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in

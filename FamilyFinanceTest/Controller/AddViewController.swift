@@ -155,7 +155,7 @@ class AddViewController: UIViewController {
         params["ingredients"] = ingredients
         params["steps"] = receipeRequestModel.steps
         debugPrint(params)
-        let url = URL.init(string: "http://9.177.216.191:7072/uploadRecipe")!
+        let url = URL.init(string: "http://92.177.216.191:7072/uploadRecipe")!
         Utile.showActivityIndicator()
         Alamofire.request(url, method: .post , parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
                 print(response)
@@ -164,7 +164,7 @@ class AddViewController: UIViewController {
                     self.navigationController?.popToRootViewController(animated: true)
                 })
             }else{
-                self.showAlert(preferredButtonTitle: "OK", message: "", onPreferredButtonClick: {
+                self.showAlert(preferredButtonTitle: "OK", message: "Error While Posting Data To Server!", onPreferredButtonClick: {
                     
                 })
             }
